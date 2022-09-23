@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'standarddata.dart';
 
 Container numberpart2(String number) {
-  MaterialColor setColor() {
+
+  List<BoxShadow> setShadow() {
     if (number == "5" || number == "6") {
-      return Colors.blue;
+      return standardBoxShadow(false);
     } else {
-      return Colors.grey;
+      return standardBoxShadow(true);
     }
   }
 
   return Container(
-    width: 25,
-    height: 100,
+    width: getStandardWith(),
+    height: getStandardheight(),
     decoration: BoxDecoration(
-      color: setColor(),
+      color: standardTimeColor(),
+      boxShadow: setShadow(),
       borderRadius: BorderRadius.only(
         topLeft: Radius.circular(30),
         bottomLeft: Radius.circular(30),
